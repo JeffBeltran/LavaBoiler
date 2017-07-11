@@ -21,7 +21,7 @@
 
   <div id="navMenuExample" class="navbar-menu" :class="{ 'is-active': showNav }">
     <div class="navbar-start">
-      <a class="navbar-item " href="http://bulma.io/">
+      <a class="navbar-item " href="#">
         Home
       </a>
     </div>
@@ -44,21 +44,47 @@
           </p>
         </div>
       </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link  is-active" href="#">
+          User Name
+        </a>
+        <div class="navbar-dropdown ">
+          <a class="navbar-item " href="#">
+            Logout
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 </template>
 
 <script>
+// import { mapGetters, mapActions } from 'vuex';
+
 export default {
   data() {
     return {
       showNav: false,
     };
   },
-  methods: {
-
-  }
+  // methods: {
+  //   ...mapActions({
+  //     logoutUser: 'auth/logoutUser'
+  //   }),
+  //   signout() {
+  //     this.logoutUser().then(() => {
+  //       this.$router.replace({
+  //         name: 'home'
+  //       });
+  //     })
+  //   }
+  // },
+  // computed: {
+  //   ...mapGetters({
+  //     user: 'auth/user'
+  //   }),
+  // }
 }
 </script>
 

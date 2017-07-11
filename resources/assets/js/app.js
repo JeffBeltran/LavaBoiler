@@ -1,3 +1,6 @@
+import router from './router';
+// import store from './vuex';
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -19,12 +22,15 @@ Vue.use(Buefy)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('navigation', require('./components/Navigation.vue'));
+Vue.component('bulma-navigation', require('./components/Navigation.vue'));
+Vue.component('bulma-footer', require('./components/Footer.vue'));
 Vue.component('app', require('./components/App.vue'));
 Vue.component('passport-clients', require('./components/passport/Clients.vue'));
 Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue'));
 Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
 const app = new Vue({
-	el: '#app'
+	el: '#app',
+	// store: store,
+	router: router,
 });
