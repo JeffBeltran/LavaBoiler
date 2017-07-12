@@ -15,6 +15,7 @@
 
       <div class="navbar-menu is-box" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
+          <router-link :to="{ name: 'users'}" class="navbar-item">Users</router-link>
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
@@ -31,7 +32,7 @@
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link  is-active" href="#">
+            <a class="navbar-link">
               User Name
             </a>
             <div class="navbar-dropdown ">

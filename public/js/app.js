@@ -33625,7 +33625,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33636,6 +33636,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -33738,7 +33739,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "navbar-end"
-  }, [_c('div', {
+  }, [_c('router-link', {
+    staticClass: "navbar-item",
+    attrs: {
+      "to": {
+        name: 'users'
+      }
+    }
+  }, [_vm._v("Users")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-item"
   }, [_c('div', {
     staticClass: "field is-grouped"
@@ -33764,15 +33772,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-sign-in"
-  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])]), _vm._v(" "), _vm._m(0)])])])])
+  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])]), _vm._v(" "), _vm._m(0)], 1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "navbar-item has-dropdown is-hoverable"
   }, [_c('a', {
-    staticClass: "navbar-link  is-active",
-    attrs: {
-      "href": "#"
-    }
+    staticClass: "navbar-link"
   }, [_vm._v("\n            User Name\n          ")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-dropdown "
   }, [_c('a', {
