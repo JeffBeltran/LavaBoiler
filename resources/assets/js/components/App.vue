@@ -2,8 +2,6 @@
 <div>
   <bulma-navigation></bulma-navigation>
   <router-view></router-view>
-
-  <bulma-footer></bulma-footer>
 </div>
 </template>
 
