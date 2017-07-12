@@ -1,7 +1,10 @@
 <template>
-<div>
+<div class="Site">
   <bulma-navigation></bulma-navigation>
-  <router-view></router-view>
+  <div class="Site-content">
+    <router-view></router-view>
+  </div>
+  <bulma-footer></bulma-footer>
 </div>
 </template>
 
@@ -19,5 +22,15 @@ export default {
 </script>
 
 <style lang="css">
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 
 </style>

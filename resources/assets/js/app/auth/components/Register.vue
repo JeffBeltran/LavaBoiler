@@ -9,10 +9,10 @@
                 <div class="hero-body">
                   <div class="container">
                     <h1 class="title">
-                      Login to Site
+                      Register for the Site
                     </h1>
                     <h2 class="subtitle">
-                      Enter your email and password to login
+                      Create your user account for the site
                     </h2>
                   </div>
                 </div>

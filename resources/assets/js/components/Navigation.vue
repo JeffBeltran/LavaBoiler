@@ -2,9 +2,9 @@
   <div class="container">
     <nav class="navbar">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">
-          <i class="fa fa-fire fa-fw" aria-hidden="true"></i> LavaBoiler
-        </a>
+        <router-link :to="{ name: 'home'}" class="navbar-item">
+          <i class="fa fa-thermometer-full fa-fw" aria-hidden="true"></i> LavaBoiler
+        </router-link>
 
         <div class="navbar-burger burger" data-target="navMenuExample" :class="{ 'is-active': showNav }" @click="showNav = !showNav">
           <span></span>
@@ -18,17 +18,15 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <a class="navbar-item" href="#">
-                  Register
-                </a>
+                <router-link :to="{ name: 'register'}" class="navbar-item">Register</router-link>
               </p>
               <p class="control">
-                <a class="button is-primary" href="#">
+                <router-link :to="{ name: 'login'}" class="button is-primary">
                   <span class="icon">
                     <i class="fa fa-sign-in"></i>
                   </span>
                   <span>Login</span>
-                </a>
+                </router-link>
               </p>
             </div>
           </div>

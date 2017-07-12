@@ -10900,7 +10900,9 @@ window.Vue = __webpack_require__(4);
 
 //import 'buefy/lib/buefy.css';
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_buefy___default.a);
+Vue.use(__WEBPACK_IMPORTED_MODULE_1_buefy___default.a, {
+  defaultIconPack: 'fa'
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13474,14 +13476,16 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_routes__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors_routes__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_routes__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_routes__ = __webpack_require__(109);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 
 
 
 
+
 // make sure errors is imported last to handle 404
-/* harmony default export */ __webpack_exports__["a"] = ([].concat(_toConsumableArray(__WEBPACK_IMPORTED_MODULE_2__home_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_0__auth_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_1__errors_routes__["a" /* default */])));
+/* harmony default export */ __webpack_exports__["a"] = ([].concat(_toConsumableArray(__WEBPACK_IMPORTED_MODULE_2__home_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_0__auth_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_3__user_routes__["a" /* default */]), _toConsumableArray(__WEBPACK_IMPORTED_MODULE_1__errors_routes__["a" /* default */])));
 
 /***/ }),
 /* 18 */
@@ -14817,9 +14821,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('h1', {
     staticClass: "title"
-  }, [_vm._v("\n                    Login to Site\n                  ")]), _vm._v(" "), _c('h2', {
+  }, [_vm._v("\n                    Register for the Site\n                  ")]), _vm._v(" "), _c('h2', {
     staticClass: "subtitle"
-  }, [_vm._v("\n                    Enter your email and password to login\n                  ")])])])])])
+  }, [_vm._v("\n                    Create your user account for the site\n                  ")])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "field is-grouped"
@@ -15118,7 +15122,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -15133,6 +15137,112 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -15141,8 +15251,56 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v("home")])
-},staticRenderFns: []}
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('section', {
+    staticClass: "section"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "content"
+  }, [_c('h1', [_vm._v("Hello World")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('h2', [_vm._v("Second level")]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('h3', [_vm._v("Third level")]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('blockquote', [_vm._v("Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet turpis.")]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('p', [_vm._v("Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas vestibulum interdum commodo.")]), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('p', [_vm._v("Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis malesuada nulla. Nulla facilisi. Nullam ac erat ante.")]), _vm._v(" "), _c('h4', [_vm._v("Fourth level")]), _vm._v(" "), _c('p', [_vm._v("Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at elementum ex efficitur.")]), _vm._v(" "), _c('pre', [_vm._v("<!DOCTYPE html>\n          <html>\n          <head>\n          <title>Hello World</title>\n          </head>\n          <body>\n          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>\n          </body>\n          </html>")]), _vm._v(" "), _c('p', [_vm._v("Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.")]), _vm._v(" "), _vm._m(8), _vm._v(" "), _c('p', [_vm._v("Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.")]), _vm._v(" "), _c('h5', [_vm._v("Fifth level")]), _vm._v(" "), _c('p', [_vm._v("Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.")]), _vm._v(" "), _vm._m(9), _vm._v(" "), _c('h6', [_vm._v("Sixth level")]), _vm._v(" "), _c('p', [_vm._v("Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.")])], 1)])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', {
+    staticClass: "hero is-medium is-primary is-bold"
+  }, [_c('div', {
+    staticClass: "hero-body"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('h1', {
+    staticClass: "title"
+  }, [_vm._v("\n          Home Page\n        ")]), _vm._v(" "), _c('h2', {
+    staticClass: "subtitle"
+  }, [_vm._v("\n          Welcome to the Site\n        ")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_vm._v("Lorem ipsum"), _c('sup', [_c('a', [_vm._v("[1]")])]), _vm._v(" dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub"), _c('sub', [_vm._v("script")]), _vm._v(" works as well!")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_vm._v("Curabitur accumsan turpis pharetra "), _c('strong', [_vm._v("augue tincidunt")]), _vm._v(" blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', [_c('li', [_vm._v("In fermentum leo eu lectus mollis, quis dictum mi aliquet.")]), _vm._v(" "), _c('li', [_vm._v("Morbi eu nulla lobortis, lobortis est in, fringilla felis.")]), _vm._v(" "), _c('li', [_vm._v("Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.")]), _vm._v(" "), _c('li', [_vm._v("Ut non enim metus.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_vm._v("Quisque ante lacus, malesuada ac auctor vitae, congue "), _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("non ante")]), _vm._v(". Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ol', [_c('li', [_vm._v("Donec blandit a lorem id convallis.")]), _vm._v(" "), _c('li', [_vm._v("Cras gravida arcu at diam gravida gravida.")]), _vm._v(" "), _c('li', [_vm._v("Integer in volutpat libero.")]), _vm._v(" "), _c('li', [_vm._v("Donec a diam tellus.")]), _vm._v(" "), _c('li', [_vm._v("Aenean nec tortor orci.")]), _vm._v(" "), _c('li', [_vm._v("Quisque aliquam cursus urna, non bibendum massa viverra eget.")]), _vm._v(" "), _c('li', [_vm._v("Vivamus maximus ultricies pulvinar.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_vm._v("Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et "), _c('em', [_vm._v("justo sodales")]), _vm._v(" elementum. Maecenas ultrices lacus quis neque consectetur, et lobortis nisi molestie.")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('dl', [_c('dt', [_vm._v("Web")]), _vm._v(" "), _c('dd', [_vm._v("The part of the Internet that contains websites and web pages")]), _vm._v(" "), _c('dt', [_vm._v("HTML")]), _vm._v(" "), _c('dd', [_vm._v("A markup language for creating web pages")]), _vm._v(" "), _c('dt', [_vm._v("CSS")]), _vm._v(" "), _c('dd', [_vm._v("A technology to make HTML look better")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('table', [_c('thead', [_c('tr', [_c('th', [_vm._v("One")]), _vm._v(" "), _c('th', [_vm._v("Two")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Three")]), _vm._v(" "), _c('td', [_vm._v("Four")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Five")]), _vm._v(" "), _c('td', [_vm._v("Six")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Seven")]), _vm._v(" "), _c('td', [_vm._v("Eight")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Nine")]), _vm._v(" "), _c('td', [_vm._v("Ten")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Eleven")]), _vm._v(" "), _c('td', [_vm._v("Twelve")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('figure', [_c('img', {
+    attrs: {
+      "src": "http://bulma.io/images/placeholders/256x256.png"
+    }
+  }), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": "http://bulma.io/images/placeholders/256x256.png"
+    }
+  }), _vm._v(" "), _c('figcaption', [_vm._v("\n              Figure 1: Some beautiful placeholders\n            ")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -33467,7 +33625,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33478,8 +33636,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -33550,7 +33706,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "navbar"
   }, [_c('div', {
     staticClass: "navbar-brand"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('router-link', {
+    staticClass: "navbar-item",
+    attrs: {
+      "to": {
+        name: 'home'
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-thermometer-full fa-fw",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" LavaBoiler\n      ")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-burger burger",
     class: {
       'is-active': _vm.showNav
@@ -33563,26 +33731,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.showNav = !_vm.showNav
       }
     }
-  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])]), _vm._v(" "), _c('div', {
+  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])], 1), _vm._v(" "), _c('div', {
     staticClass: "navbar-menu is-box",
     class: {
       'is-active': _vm.showNav
     }
-  }, [_vm._m(1)])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    staticClass: "navbar-item",
-    attrs: {
-      "href": "#"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-fire fa-fw",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" LavaBoiler\n      ")])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_c('div', {
     staticClass: "navbar-end"
   }, [_c('div', {
     staticClass: "navbar-item"
@@ -33590,23 +33744,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "field is-grouped"
   }, [_c('p', {
     staticClass: "control"
-  }, [_c('a', {
+  }, [_c('router-link', {
     staticClass: "navbar-item",
     attrs: {
-      "href": "#"
+      "to": {
+        name: 'register'
+      }
     }
-  }, [_vm._v("\n                Register\n              ")])]), _vm._v(" "), _c('p', {
+  }, [_vm._v("Register")])], 1), _vm._v(" "), _c('p', {
     staticClass: "control"
-  }, [_c('a', {
+  }, [_c('router-link', {
     staticClass: "button is-primary",
     attrs: {
-      "href": "#"
+      "to": {
+        name: 'login'
+      }
     }
   }, [_c('span', {
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-sign-in"
-  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])])])]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])]), _vm._v(" "), _vm._m(0)])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "navbar-item has-dropdown is-hoverable"
   }, [_c('a', {
     staticClass: "navbar-link  is-active",
@@ -33620,7 +33780,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("\n              Logout\n            ")])])])])
+  }, [_vm._v("\n              Logout\n            ")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -33863,7 +34023,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.Site {\n  display: flex;\n  min-height: 100vh;\n  flex-direction: column;\n}\n.Site-content {\n  flex: 1;\n}\n\n", ""]);
 
 // exports
 
@@ -33874,6 +34034,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -33895,7 +34058,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('bulma-navigation'), _vm._v(" "), _c('router-view')], 1)
+  return _c('div', {
+    staticClass: "Site"
+  }, [_c('bulma-navigation'), _vm._v(" "), _c('div', {
+    staticClass: "Site-content"
+  }, [_c('router-view')], 1), _vm._v(" "), _c('bulma-footer')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -35538,6 +35705,242 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(110);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ([{
+	path: '/users',
+	component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* ListUsers */],
+	name: 'users',
+	meta: {
+		needsAuth: true
+	}
+}]);
+
+/***/ }),
+/* 110 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListUsers; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+
+var ListUsers = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('list-users', __webpack_require__(111));
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(112)
+}
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(114),
+  /* template */
+  __webpack_require__(115),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "O:\\Projects\\lavaboiler\\resources\\assets\\js\\app\\user\\components\\ListUsers.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] ListUsers.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8bad26c2", Component.options)
+  } else {
+    hotAPI.reload("data-v-8bad26c2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(113);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("000add6a", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8bad26c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListUsers.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8bad26c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListUsers.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      users: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/users').then(function (response) {
+      _this.users = response.data.data;
+    }).catch(function (error) {
+      // user doesn't have valid token...
+    });
+  },
+
+  methods: {}
+});
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_vm._m(0), _vm._v(" "), _c('section', {
+    staticClass: "section"
+  }, _vm._l((_vm.users), function(user) {
+    return _c('div', {
+      staticClass: "box"
+    }, [_c('article', {
+      staticClass: "media"
+    }, [_vm._m(1, true), _vm._v(" "), _c('div', {
+      staticClass: "media-content"
+    }, [_c('div', {
+      staticClass: "content"
+    }, [_c('p', [_c('strong', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('small', [_vm._v(_vm._s(user.email))]), _vm._v(" "), _c('small'), _vm._v(" "), _c('br'), _vm._v("\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.\n              ")])])])])])
+  }))])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', {
+    staticClass: "hero is-primary"
+  }, [_c('div', {
+    staticClass: "hero-body"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('h1', {
+    staticClass: "title"
+  }, [_vm._v("\n          Site Users\n        ")]), _vm._v(" "), _c('h2', {
+    staticClass: "subtitle"
+  }, [_vm._v("\n          Listing all users for the site\n        ")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "media-left"
+  }, [_c('figure', {
+    staticClass: "image is-64x64"
+  }, [_c('img', {
+    attrs: {
+      "src": "http://bulma.io/images/placeholders/128x128.png",
+      "alt": "Image"
+    }
+  })])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-8bad26c2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
