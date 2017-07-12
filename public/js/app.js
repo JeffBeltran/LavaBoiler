@@ -10882,10 +10882,11 @@ module.exports = __webpack_require__(100);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_buefy__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_buefy__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuex__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_buefy__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_buefy__);
 
-// import store from './vuex';
+
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -10900,7 +10901,7 @@ window.Vue = __webpack_require__(4);
 
 //import 'buefy/lib/buefy.css';
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_buefy___default.a, {
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_buefy___default.a, {
   defaultIconPack: 'fa'
 });
 
@@ -10919,7 +10920,7 @@ Vue.component('passport-personal-access-tokens', __webpack_require__(95));
 
 var app = new Vue({
   el: '#app',
-  // store: store,
+  store: __WEBPACK_IMPORTED_MODULE_1__vuex__["a" /* default */],
   router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */]
 });
 
@@ -13950,7 +13951,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export Store */
 /* unused harmony export mapState */
 /* unused harmony export mapMutations */
-/* unused harmony export mapGetters */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
 /* unused harmony export mapActions */
 /**
  * vuex v2.3.0
@@ -14752,7 +14753,7 @@ var index_esm = {
   mapActions: mapActions
 };
 
-/* unused harmony default export */ var _unused_webpack_default_export = (index_esm);
+/* harmony default export */ __webpack_exports__["a"] = (index_esm);
 
 
 /***/ }),
@@ -33625,7 +33626,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33636,6 +33637,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(30);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
 //
 //
 //
@@ -33686,14 +33692,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import { mapGetters, mapActions } from 'vuex';
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       showNav: false
     };
-  }
+  },
+
+  // methods: {
+  //   ...mapActions({
+  //     logoutUser: 'auth/logoutUser'
+  //   }),
+  //   signout() {
+  //     this.logoutUser().then(() => {
+  //       this.$router.replace({
+  //         name: 'home'
+  //       });
+  //     })
+  //   }
+  // },
+  computed: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */]({
+    user: 'auth/user'
+  }))
 });
 
 /***/ }),
@@ -33737,16 +33759,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'is-active': _vm.showNav
     }
-  }, [_c('div', {
+  }, [(!_vm.user.authenticated) ? _c('div', {
     staticClass: "navbar-end"
-  }, [_c('router-link', {
-    staticClass: "navbar-item",
-    attrs: {
-      "to": {
-        name: 'users'
-      }
-    }
-  }, [_vm._v("Users")]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "navbar-item"
   }, [_c('div', {
     staticClass: "field is-grouped"
@@ -33772,7 +33787,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-sign-in"
-  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])]), _vm._v(" "), _vm._m(0)], 1)])])])
+  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])])]) : _vm._e(), _vm._v(" "), (_vm.user.authenticated) ? _c('div', {
+    staticClass: "navbar-end"
+  }, [_c('router-link', {
+    staticClass: "navbar-item",
+    attrs: {
+      "to": {
+        name: 'users'
+      }
+    }
+  }, [_vm._v("Users")]), _vm._v(" "), _vm._m(0)], 1) : _vm._e()])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "navbar-item has-dropdown is-hoverable"
@@ -35946,6 +35970,168 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-8bad26c2", module.exports)
   }
 }
+
+/***/ }),
+/* 116 */,
+/* 117 */,
+/* 118 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_auth_vuex__ = __webpack_require__(119);
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
+    modules: {
+        auth: __WEBPACK_IMPORTED_MODULE_2__app_auth_vuex__["a" /* default */]
+    }
+}));
+
+/***/ }),
+/* 119 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutations__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__mutations__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__actions__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getters__ = __webpack_require__(123);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	namespaced: true,
+	state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
+	mutations: __WEBPACK_IMPORTED_MODULE_1__mutations__,
+	actions: __WEBPACK_IMPORTED_MODULE_2__actions__,
+	getters: __WEBPACK_IMPORTED_MODULE_3__getters__
+});
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+	user: {
+		authenticated: false,
+		data: null
+	}
+});
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports) {
+
+// import localforage from 'localforage';
+//
+// export const setToken = (state, token) => {
+//   if (_.isEmpty(token)) {
+//     localforage.removeItem('authtoken', token)
+//     return
+//   }
+//
+//   localforage.setItem('authtoken', token)
+// }
+//
+// export const setAuthenticated = (state, isAuthenticated) => {
+//   state.user.authenticated = isAuthenticated;
+// }
+//
+// export const setUserData = (state, data) => {
+//   state.user.data = data;
+// }
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports) {
+
+// import {setHttpToken} from '../../../helpers';
+// import localforage from 'localforage';
+//
+// export const register = ({ dispatch }, { payload,	context }) => {
+// 	return axios.post('/api/register', payload).then((response) => {
+// 		dispatch('setToken', response.data.meta.token).then(() => {
+// 				dispatch("fetchUser");
+// 		})
+// 	}).catch((error) => {
+// 		context.errors = error.response.data.errors;
+// 	})
+// }
+//
+// export const login = ({ dispatch }, { payload, context }) => {
+//     return axios.post('/api/login', payload).then((response) => {
+//       dispatch('setToken', response.data.meta.token).then(() => {
+// 				dispatch("fetchUser");
+//       })
+//     }).catch((error) => {
+//         context.errors = error.response.data.errors
+//     })
+// }
+//
+// export const fetchUser = ({ commit }) => {
+// 	return axios.get('/api/me').then((response) => {
+// 		commit('setAuthenticated', true)
+// 		commit('setUserData', response.data.data)
+// 	}).catch((error) => {
+// 		context.errors = error.response.data.errors
+// 	})
+// }
+//
+// export const logoutUser = ({ dispatch }) => {
+// 	return axios.post('/api/logout').then((response) => {
+// 		dispatch('clearAuth');
+// 	})
+// }
+//
+// export const setToken = ({ commit,	dispatch }, token ) => {
+// 	if(_.isEmpty(token)){
+// 		return dispatch('checkTokenExists').then((token) => {
+// 			setHttpToken(token);
+// 		})
+// 	}
+//
+// 	commit('setToken', token);
+// 	setHttpToken(token);
+// }
+//
+// export const checkTokenExists = ({ commit,	dispatch }, token ) => {
+// 	return localforage.getItem('authtoken').then((token) => {
+// 		if(_.isEmpty(token)){
+// 			return Promise.reject('NO_STORAGE_TOKEN');
+// 		}
+// 		return Promise.resolve(token);
+// 	});
+// }
+//
+// export const clearAuth = ({ commit }, token ) => {
+// 	commit('setAuthenticated', false);
+// 	commit('setUserData', null);
+// 	commit('setToken', null);
+// 	setHttpToken(null);
+// }
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "user", function() { return user; });
+var user = function user(state) {
+  return state.user;
+};
 
 /***/ })
 /******/ ]);

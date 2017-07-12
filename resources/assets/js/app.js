@@ -1,5 +1,5 @@
 import router from './router';
-// import store from './vuex';
+import store from './vuex';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -33,6 +33,6 @@ Vue.component('passport-personal-access-tokens', require('./components/passport/
 
 const app = new Vue({
 	el: '#app',
-	// store: store,
+	store: store,
 	router: router,
 });
