@@ -7,20 +7,20 @@ export const register = ({ dispatch }, { payload,	context }) => {
 		// 		dispatch("fetchUser");
 		// })
 	}).catch((error) => {
-		context.errors = error.response.data.errors;
+		context.errors.record(error.response.data);
 	})
 }
-//
-// export const login = ({ dispatch }, { payload, context }) => {
-//     return axios.post('/api/login', payload).then((response) => {
-//       dispatch('setToken', response.data.meta.token).then(() => {
-// 				dispatch("fetchUser");
-//       })
-//     }).catch((error) => {
-//         context.errors = error.response.data.errors
-//     })
-// }
-//
+
+export const login = ({ dispatch }, { payload, context }) => {
+	return axios.post('/api/login', payload).then((response) => {
+		dispatch('setToken', response.data.meta.token).then(() => {
+			dispatch("fetchUser");
+		})
+	}).catch((error) => {
+		context.errors.record(error.response.data);
+	})
+}
+
 // export const fetchUser = ({ commit }) => {
 // 	return axios.get('/api/me').then((response) => {
 // 		commit('setAuthenticated', true)

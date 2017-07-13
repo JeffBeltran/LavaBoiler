@@ -20,20 +20,26 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <b-field label="Email">
-                  <b-input type="email" :value="email"></b-input>
-                </b-field>
-                <b-field label="Password">
-                  <b-input type="password" :value="password"></b-input>
-                </b-field>
-                <div class="field is-grouped">
-                  <p class="control">
-                    <button class="button is-primary">Submit</button>
-                  </p>
-                  <p class="control">
-                    <button class="button is-link">Cancel</button>
-                  </p>
-                </div>
+                <form @submit.prevent="submit">
+                  <b-field label="Email"
+                  :type="(errors.has('email') ? 'is-danger' : '')"
+                  :message="errors.get('email')">
+                    <b-input type="email" :value="email"></b-input>
+                  </b-field>
+                  <b-field label="Password"
+                  :type="(errors.has('password') ? 'is-danger' : '')"
+                  :message="errors.get('password')">
+                    <b-input type="password" :value="password"></b-input>
+                  </b-field>
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <button class="button is-primary">Submit</button>
+                    </p>
+                    <p class="control">
+                      <button class="button is-link">Cancel</button>
+                    </p>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -44,42 +50,40 @@
 </template>
 
 <script>
-// import {
-//   mapActions
-// } from 'vuex';
-//
+import { mapActions } from 'vuex';
+import { FormErrors } from '../../../helpers/errors.js';
 // import localforage from 'localforage';
-//
+
 export default {
   data() {
     return {
       email: null,
       password: null,
-      errors: [],
+      errors: new FormErrors(),
     }
   },
-//   methods: {
-//     ...mapActions({
-//       login: 'auth/login'
-//     }),
-//     submit() {
-//       this.login({
-//         payload: {
-//           email: this.email,
-//           password: this.password,
-//         },
-//         context: this
-//       }).then(() => {
-//         localforage.getItem('intended').then((name) => {
-//           if (_.isEmpty(name)) {
-//             this.$router.replace({ name: 'home'});
-//             return
-//           }
-//           this.$router.replace({ name: name});
-//         })
-//       })
-//     }
-//   }
+  methods: {
+    ...mapActions({
+      login: 'auth/login'
+    }),
+    submit() {
+      this.login({
+        payload: {
+          email: this.email,
+          password: this.password,
+        },
+        context: this
+      }).then(() => {
+        // localforage.getItem('intended').then((name) => {
+        //   if (_.isEmpty(name)) {
+        //     this.$router.replace({ name: 'home'});
+        //     return
+        //   }
+        //   this.$router.replace({ name: name});
+        // })
+      })
+    }
+  }
 }
 </script>
 

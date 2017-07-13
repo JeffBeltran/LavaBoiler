@@ -13607,7 +13607,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -13651,6 +13651,16 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_errors_js__ = __webpack_require__(124);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -13697,20 +13707,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import {
-//   mapActions
-// } from 'vuex';
-//
+
+
 // import localforage from 'localforage';
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       email: null,
       password: null,
-      errors: []
+      errors: new __WEBPACK_IMPORTED_MODULE_1__helpers_errors_js__["a" /* FormErrors */]()
     };
-  }
+  },
+
+  methods: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */]({
+    login: 'auth/login'
+  }), {
+    submit: function submit() {
+      this.login({
+        payload: {
+          email: this.email,
+          password: this.password
+        },
+        context: this
+      }).then(function () {
+        // localforage.getItem('intended').then((name) => {
+        //   if (_.isEmpty(name)) {
+        //     this.$router.replace({ name: 'home'});
+        //     return
+        //   }
+        //   this.$router.replace({ name: name});
+        // })
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -13732,9 +13762,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-content"
   }, [_c('div', {
     staticClass: "content"
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.submit($event)
+      }
+    }
   }, [_c('b-field', {
     attrs: {
-      "label": "Email"
+      "label": "Email",
+      "type": (_vm.errors.has('email') ? 'is-danger' : ''),
+      "message": _vm.errors.get('email')
     }
   }, [_c('b-input', {
     attrs: {
@@ -13743,14 +13782,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
-      "label": "Password"
+      "label": "Password",
+      "type": (_vm.errors.has('password') ? 'is-danger' : ''),
+      "message": _vm.errors.get('password')
     }
   }, [_c('b-input', {
     attrs: {
       "type": "password",
       "value": _vm.password
     }
-  })], 1), _vm._v(" "), _vm._m(1)], 1)])])])])])])
+  })], 1), _vm._v(" "), _vm._m(1)], 1)])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card-image"
@@ -13865,7 +13906,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -13877,6 +13918,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_errors_js__ = __webpack_require__(124);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -13932,6 +13974,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -13942,7 +13992,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       email: null,
       password: null,
       password_confirmation: null,
-      errors: []
+      errors: new __WEBPACK_IMPORTED_MODULE_1__helpers_errors_js__["a" /* FormErrors */]()
     };
   },
 
@@ -14806,7 +14856,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('b-field', {
     attrs: {
-      "label": "Name"
+      "label": "Name",
+      "type": (_vm.errors.has('name') ? 'is-danger' : ''),
+      "message": _vm.errors.get('name')
     }
   }, [_c('b-input', {
     model: {
@@ -14818,7 +14870,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
-      "label": "Email"
+      "label": "Email",
+      "type": (_vm.errors.has('email') ? 'is-danger' : ''),
+      "message": _vm.errors.get('email')
     }
   }, [_c('b-input', {
     attrs: {
@@ -14833,7 +14887,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
-      "label": "Password"
+      "label": "Password",
+      "type": (_vm.errors.has('password') ? 'is-danger' : ''),
+      "message": _vm.errors.get('password')
     }
   }, [_c('b-input', {
     attrs: {
@@ -14848,7 +14904,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
-      "label": "Confirm Password"
+      "label": "Confirm Password",
+      "type": (_vm.errors.has('password') ? 'is-danger' : '')
     }
   }, [_c('b-input', {
     attrs: {
@@ -14873,9 +14930,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('h1', {
     staticClass: "title"
-  }, [_vm._v("\n                    Register for the Site\n                  ")]), _vm._v(" "), _c('h2', {
+  }, [_vm._v("\n                      Register for the Site\n                    ")]), _vm._v(" "), _c('h2', {
     staticClass: "subtitle"
-  }, [_vm._v("\n                    Create your user account for the site\n                  ")])])])])])
+  }, [_vm._v("\n                      Create your user account for the site\n                    ")])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "field is-grouped"
@@ -36110,6 +36167,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 // import {setHttpToken} from '../../../helpers';
 // import localforage from 'localforage';
 //
@@ -36123,20 +36181,24 @@ var register = function register(_ref, _ref2) {
 		// 		dispatch("fetchUser");
 		// })
 	}).catch(function (error) {
-		context.errors = error.response.data.errors;
+		context.errors.record(error.response.data);
 	});
 };
-//
-// export const login = ({ dispatch }, { payload, context }) => {
-//     return axios.post('/api/login', payload).then((response) => {
-//       dispatch('setToken', response.data.meta.token).then(() => {
-// 				dispatch("fetchUser");
-//       })
-//     }).catch((error) => {
-//         context.errors = error.response.data.errors
-//     })
-// }
-//
+
+var login = function login(_ref3, _ref4) {
+	var dispatch = _ref3.dispatch;
+	var payload = _ref4.payload,
+	    context = _ref4.context;
+
+	return axios.post('/api/login', payload).then(function (response) {
+		dispatch('setToken', response.data.meta.token).then(function () {
+			dispatch("fetchUser");
+		});
+	}).catch(function (error) {
+		context.errors.record(error.response.data);
+	});
+};
+
 // export const fetchUser = ({ commit }) => {
 // 	return axios.get('/api/me').then((response) => {
 // 		commit('setAuthenticated', true)
@@ -36189,6 +36251,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var user = function user(state) {
   return state.user;
 };
+
+/***/ }),
+/* 124 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormErrors; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * This class handles form errors relating to validation based on
+ * laravel's handling of validation.
+ * @type {Object}
+ */
+var FormErrors = function () {
+	function FormErrors() {
+		_classCallCheck(this, FormErrors);
+
+		this.errors = {};
+	}
+
+	_createClass(FormErrors, [{
+		key: "get",
+		value: function get(field) {
+			if (this.errors[field]) {
+				return this.errors[field][0];
+			}
+		}
+	}, {
+		key: "record",
+		value: function record(errors) {
+			this.errors = errors;
+		}
+	}, {
+		key: "has",
+		value: function has(field) {
+			return this.errors.hasOwnProperty(field);
+		}
+	}, {
+		key: "clear",
+		value: function clear(field) {
+			delete this.errors[field];
+		}
+	}, {
+		key: "any",
+		value: function any() {
+			return !_.isEmpty(this.errors);
+		}
+	}]);
+
+	return FormErrors;
+}();
 
 /***/ })
 /******/ ]);
