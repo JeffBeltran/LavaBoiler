@@ -20,17 +20,18 @@
             </div>
             <div class="card-content">
               <div class="content">
+                <form @submit.prevent="submit">
                 <b-field label="Name">
-                  <b-input :value="name"></b-input>
+                  <b-input v-model="name"></b-input>
                 </b-field>
                 <b-field label="Email">
-                  <b-input type="email" :value="email"></b-input>
+                  <b-input type="email" v-model="email"></b-input>
                 </b-field>
                 <b-field label="Password">
-                  <b-input type="password" :value="password"></b-input>
+                  <b-input type="password" v-model="password"></b-input>
                 </b-field>
                 <b-field label="Confirm Password">
-                  <b-input type="password" :value="password_confirmation"></b-input>
+                  <b-input type="password" v-model="password_confirmation"></b-input>
                 </b-field>
                 <div class="field is-grouped">
                   <p class="control">
@@ -40,6 +41,7 @@
                     <button class="button is-link">Cancel</button>
                   </p>
                 </div>
+              </form>
               </div>
             </div>
           </div>
@@ -62,25 +64,24 @@ export default {
       errors: [],
     }
   },
-  // methods: {
-  //   ...mapActions({
-  //     register: 'auth/register'
-  //
-  //   }),
-  //   submit() {
-  //     this.register({
-  //       payload: {
-  //         name: this.name,
-  //         email: this.email,
-  //         password: this.password,
-  //         password_confirmation: this.password_confirmation
-  //       },
-  //       context: this
-  //     }).then(() => {
-  //       this.$router.replace({ name: 'home'});
-  //     })
-  //   }
-  // }
+  methods: {
+    ...mapActions({
+      register: 'auth/register'
+    }),
+    submit() {
+      this.register({
+        payload: {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.password_confirmation
+        },
+        context: this
+      }).then(() => {
+        //this.$router.replace({ name: 'home'});
+      })
+    }
+  }
 }
 </script>
 

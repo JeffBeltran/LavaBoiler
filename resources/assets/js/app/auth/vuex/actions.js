@@ -1,15 +1,15 @@
 // import {setHttpToken} from '../../../helpers';
 // import localforage from 'localforage';
 //
-// export const register = ({ dispatch }, { payload,	context }) => {
-// 	return axios.post('/api/register', payload).then((response) => {
-// 		dispatch('setToken', response.data.meta.token).then(() => {
-// 				dispatch("fetchUser");
-// 		})
-// 	}).catch((error) => {
-// 		context.errors = error.response.data.errors;
-// 	})
-// }
+export const register = ({ dispatch }, { payload,	context }) => {
+	return axios.post('/api/register', payload).then((response) => {
+		// dispatch('setToken', response.data.meta.token).then(() => {
+		// 		dispatch("fetchUser");
+		// })
+	}).catch((error) => {
+		context.errors = error.response.data.errors;
+	})
+}
 //
 // export const login = ({ dispatch }, { payload, context }) => {
 //     return axios.post('/api/login', payload).then((response) => {

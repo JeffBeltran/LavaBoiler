@@ -13865,7 +13865,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -13877,6 +13877,10 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(30);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
 //
 //
 //
@@ -13940,7 +13944,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       password_confirmation: null,
       errors: []
     };
-  }
+  },
+
+  methods: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */]({
+    register: 'auth/register'
+  }), {
+    submit: function submit() {
+      this.register({
+        payload: {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.password_confirmation
+        },
+        context: this
+      }).then(function () {
+        //this.$router.replace({ name: 'home'});
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -13951,8 +13973,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export Store */
 /* unused harmony export mapState */
 /* unused harmony export mapMutations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
-/* unused harmony export mapActions */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
 /**
  * vuex v2.3.0
  * (c) 2017 Evan You
@@ -14775,13 +14797,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-content"
   }, [_c('div', {
     staticClass: "content"
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.submit($event)
+      }
+    }
   }, [_c('b-field', {
     attrs: {
       "label": "Name"
     }
   }, [_c('b-input', {
-    attrs: {
-      "value": _vm.name
+    model: {
+      value: (_vm.name),
+      callback: function($$v) {
+        _vm.name = $$v
+      },
+      expression: "name"
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
@@ -14789,8 +14822,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('b-input', {
     attrs: {
-      "type": "email",
-      "value": _vm.email
+      "type": "email"
+    },
+    model: {
+      value: (_vm.email),
+      callback: function($$v) {
+        _vm.email = $$v
+      },
+      expression: "email"
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
@@ -14798,8 +14837,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('b-input', {
     attrs: {
-      "type": "password",
-      "value": _vm.password
+      "type": "password"
+    },
+    model: {
+      value: (_vm.password),
+      callback: function($$v) {
+        _vm.password = $$v
+      },
+      expression: "password"
     }
   })], 1), _vm._v(" "), _c('b-field', {
     attrs: {
@@ -14807,10 +14852,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('b-input', {
     attrs: {
-      "type": "password",
-      "value": _vm.password_confirmation
+      "type": "password"
+    },
+    model: {
+      value: (_vm.password_confirmation),
+      callback: function($$v) {
+        _vm.password_confirmation = $$v
+      },
+      expression: "password_confirmation"
     }
-  })], 1), _vm._v(" "), _vm._m(1)], 1)])])])])])])
+  })], 1), _vm._v(" "), _vm._m(1)], 1)])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card-image"
@@ -33713,7 +33764,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   //     })
   //   }
   // },
-  computed: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */]({
+  computed: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */]({
     user: 'auth/user'
   }))
 });
@@ -36003,7 +36054,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutations__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__mutations__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__actions__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getters__ = __webpack_require__(123);
 
 
@@ -36055,20 +36105,27 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 
 /***/ }),
 /* 122 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
 // import {setHttpToken} from '../../../helpers';
 // import localforage from 'localforage';
 //
-// export const register = ({ dispatch }, { payload,	context }) => {
-// 	return axios.post('/api/register', payload).then((response) => {
-// 		dispatch('setToken', response.data.meta.token).then(() => {
-// 				dispatch("fetchUser");
-// 		})
-// 	}).catch((error) => {
-// 		context.errors = error.response.data.errors;
-// 	})
-// }
+var register = function register(_ref, _ref2) {
+	var dispatch = _ref.dispatch;
+	var payload = _ref2.payload,
+	    context = _ref2.context;
+
+	return axios.post('/api/register', payload).then(function (response) {
+		// dispatch('setToken', response.data.meta.token).then(() => {
+		// 		dispatch("fetchUser");
+		// })
+	}).catch(function (error) {
+		context.errors = error.response.data.errors;
+	});
+};
 //
 // export const login = ({ dispatch }, { payload, context }) => {
 //     return axios.post('/api/login', payload).then((response) => {
