@@ -20,13 +20,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::get('/user', function (Request $request) {
-//         return $request->user();
-//     });
-//     Route::get('/users', function () {
-//       return response()->json([
-//         'data' => User::all()
-//       ], 200);
-//     });
-// });
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    // Route::get('/users', function () {
+    //   return response()->json([
+    //     'data' => User::all()
+    //   ], 200);
+    // });
+});

@@ -8,11 +8,11 @@
 //
 //   localforage.setItem('authtoken', token)
 // }
-//
-// export const setAuthenticated = (state, isAuthenticated) => {
-//   state.user.authenticated = isAuthenticated;
-// }
-//
-// export const setUserData = (state, data) => {
-//   state.user.data = data;
-// }
+
+export const setAuthenticated = (state, isAuthenticated) => {
+  state.user.authenticated = isAuthenticated;
+}
+
+export const setUserData = (state, data) => {
+  state.user.data = data;
+}
