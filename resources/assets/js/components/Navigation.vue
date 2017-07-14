@@ -35,7 +35,7 @@
           <router-link :to="{ name: 'users'}" class="navbar-item">Users</router-link>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              User Name
+              {{ user.data.name }}
             </a>
             <div class="navbar-dropdown ">
               <a class="navbar-item " href="#">

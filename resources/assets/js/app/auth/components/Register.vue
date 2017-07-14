@@ -37,7 +37,8 @@
               <b-input type="password" v-model="password"></b-input>
             </b-field>
             <b-field label="Confirm Password"
-            :type="(errors.has('password') ? 'is-danger' : '')">
+            :type="(errors.has('password') ? 'is-danger' : '')"
+            :message="errors.get('password')">
             <b-input type="password" v-model="password_confirmation"></b-input>
           </b-field>
           <div class="field is-grouped">
@@ -86,7 +87,9 @@ export default {
         },
         context: this
       }).then(() => {
-        //this.$router.replace({ name: 'home'});
+        if(!this.errors.any()){
+          this.$router.replace({ name: 'home'});
+        }
       })
     }
   }

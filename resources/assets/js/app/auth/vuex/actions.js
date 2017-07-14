@@ -1,17 +1,21 @@
 // import localforage from 'localforage';
 
+import Cookie from 'js-cookie'
+
 export const register = ({ dispatch }, { payload,	context }) => {
 	return axios.post('/register', payload).then((response) => {
-		// dispatch('setToken', response.data.meta.token).then(() => {
-		// 		dispatch("fetchUser");
-		// })
+		context.errors.clearAll();
+		dispatch("fetchUser");
 	}).catch((error) => {
+		console.log('errors');
 		context.errors.record(error.response.data);
 	})
 }
 
 export const login = ({ dispatch }, { payload, context }) => {
     return axios.post('/login', payload).then((response) => {
+			console.log(response);
+			context.errors.clearAll();
 			dispatch("fetchUser");
     }).catch((error) => {
 			console.log('not logged in');

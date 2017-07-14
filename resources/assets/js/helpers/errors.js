@@ -14,7 +14,7 @@ export class FormErrors {
 			// instead of an array of errors. So this check is in place unless
 			// https://github.com/laravel/framework/pull/20054 gets accepted
 
-			if( _.isArray(this.errors[field])){
+			if (_.isArray(this.errors[field])) {
 				return this.errors[field][0];
 			} else {
 				return this.errors[field];
@@ -26,15 +26,21 @@ export class FormErrors {
 		this.errors = errors;
 	}
 
-	has(field) {
-		return this.errors.hasOwnProperty(field);
-	}
 
 	clear(field) {
 		delete this.errors[field];
 	}
 
+	clearAll() {
+		this.errors = {}
+	}
+
+	has(field) {
+		return this.errors.hasOwnProperty(field);
+	}
+
 	any() {
 		return !_.isEmpty(this.errors);
 	}
+
 }

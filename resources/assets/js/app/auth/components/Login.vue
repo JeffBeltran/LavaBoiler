@@ -76,7 +76,7 @@ export default {
       }).then(() => {
         // localforage.getItem('intended').then((name) => {
         //   if (_.isEmpty(name)) {
-        //     this.$router.replace({ name: 'home'});
+            this.$router.replace({ name: 'home'});
         //     return
         //   }
         //   this.$router.replace({ name: name});
