@@ -15851,7 +15851,7 @@ var login = function login(_ref3, _ref4) {
 var fetchUser = function fetchUser(_ref5) {
 	var commit = _ref5.commit;
 
-	return axios.get('/user').then(function (response) {
+	return axios.get('/api/user').then(function (response) {
 		commit('setAuthenticated', true);
 		commit('setUserData', response.data);
 	}).catch(function (error) {

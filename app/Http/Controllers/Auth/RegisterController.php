@@ -62,18 +62,5 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-
-    /**
-     * Override the function that gets call after user is successfully created.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
-     */
-    protected function registered(Request $request, $user)
-    {
-      return response()->json([
-          'data' => $user,
-      ], 200);
-    }
+    
 }

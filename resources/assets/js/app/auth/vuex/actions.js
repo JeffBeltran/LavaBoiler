@@ -20,7 +20,7 @@ export const login = ({ dispatch }, { payload, context }) => {
 }
 
 export const fetchUser = ({ commit }) => {
-	return axios.get('/user').then((response) => {
+	return axios.get('/api/user').then((response) => {
 		commit('setAuthenticated', true);
 		commit('setUserData', response.data)
 	}).catch((error) => {

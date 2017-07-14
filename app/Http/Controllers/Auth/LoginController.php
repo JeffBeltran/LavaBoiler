@@ -27,7 +27,7 @@ class LoginController extends Controller
     *
     * @var string
     */
-    //protected $redirectTo = '/';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -39,17 +39,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * Override what happens after auth user...
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
-     */
-    protected function authenticated(Request $request, $user)
-    {
-        return response()->json([
-          'data' => $user,
-        ], 200);
-    }
 }
