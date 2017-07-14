@@ -1,5 +1,8 @@
 <?php
 
+use App\User;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +17,16 @@
 Route::get('/', function () {
     return view('app');
 });
+
+Auth::routes();
+
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::get('/user', function (Request $request) {
+//         return $request->user();
+//     });
+//     Route::get('/users', function () {
+//       return response()->json([
+//         'data' => User::all()
+//       ], 200);
+//     });
+// });

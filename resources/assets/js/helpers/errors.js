@@ -10,7 +10,15 @@ export class FormErrors {
 
 	get(field) {
 		if (this.errors[field]) {
-			return this.errors[field][0];
+			// Laravel Auth Validaiton will return string on invalid login credentials
+			// instead of an array of errors. So this check is in place unless
+			// https://github.com/laravel/framework/pull/20054 gets accepted
+
+			if( _.isArray(this.errors[field])){
+				return this.errors[field][0];
+			} else {
+				return this.errors[field];
+			}
 		}
 	}
 

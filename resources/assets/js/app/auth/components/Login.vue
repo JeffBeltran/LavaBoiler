@@ -24,12 +24,12 @@
                   <b-field label="Email"
                   :type="(errors.has('email') ? 'is-danger' : '')"
                   :message="errors.get('email')">
-                    <b-input type="email" :value="email"></b-input>
+                    <b-input type="email"  v-model="email"></b-input>
                   </b-field>
                   <b-field label="Password"
                   :type="(errors.has('password') ? 'is-danger' : '')"
                   :message="errors.get('password')">
-                    <b-input type="password" :value="password"></b-input>
+                    <b-input type="password" v-model="password"></b-input>
                   </b-field>
                   <div class="field is-grouped">
                     <p class="control">

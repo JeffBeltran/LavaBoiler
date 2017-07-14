@@ -2,7 +2,7 @@
 // import localforage from 'localforage';
 //
 export const register = ({ dispatch }, { payload,	context }) => {
-	return axios.post('/api/register', payload).then((response) => {
+	return axios.post('/register', payload).then((response) => {
 		// dispatch('setToken', response.data.meta.token).then(() => {
 		// 		dispatch("fetchUser");
 		// })
@@ -12,13 +12,13 @@ export const register = ({ dispatch }, { payload,	context }) => {
 }
 
 export const login = ({ dispatch }, { payload, context }) => {
-	return axios.post('/api/login', payload).then((response) => {
-		dispatch('setToken', response.data.meta.token).then(() => {
-			dispatch("fetchUser");
-		})
-	}).catch((error) => {
-		context.errors.record(error.response.data);
-	})
+    return axios.post('/login', payload).then((response) => {
+      // dispatch('setToken', response.data.meta.token).then(() => {
+			// 	dispatch("fetchUser");
+      // })
+    }).catch((error) => {
+			context.errors.record(error.response.data);
+    })
 }
 
 // export const fetchUser = ({ commit }) => {
