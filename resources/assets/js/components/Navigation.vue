@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <nav class="navbar">
+    <nav class="navbar" v-cloak>
       <div class="navbar-brand">
         <router-link :to="{ name: 'home'}" class="navbar-item">
           <i class="fa fa-thermometer-full fa-fw" aria-hidden="true"></i> LavaBoiler
@@ -13,8 +13,8 @@
         </div>
       </div>
 
-      <div class="navbar-menu is-box" :class="{ 'is-active': showNav }">
-        <div class="navbar-end" v-if="!user.authenticated">
+      <div class="navbar-menu is-box" :class="{ 'is-active': showNav }" v-if="!user.authenticated">
+        <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
@@ -31,14 +31,16 @@
             </div>
           </div>
         </div>
-        <div class="navbar-end" v-if="user.authenticated">
+      </div>
+      <div class="navbar-menu is-box" :class="{ 'is-active': showNav }" v-if="user.authenticated">
+        <div class="navbar-end">
           <router-link :to="{ name: 'users'}" class="navbar-item">Users</router-link>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               {{ user.data.name }}
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="#">
+              <a class="navbar-item " href="#" @click.prevent="signout">
                 Logout
               </a>
             </div>
@@ -50,7 +52,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -58,18 +60,18 @@ export default {
       showNav: false,
     };
   },
-  // methods: {
-  //   ...mapActions({
-  //     logoutUser: 'auth/logoutUser'
-  //   }),
-  //   signout() {
-  //     this.logoutUser().then(() => {
-  //       this.$router.replace({
-  //         name: 'home'
-  //       });
-  //     })
-  //   }
-  // },
+  methods: {
+    ...mapActions({
+      logoutUser: 'auth/logoutUser'
+    }),
+    signout() {
+      this.logoutUser().then(() => {
+        this.$router.replace({
+          name: 'home'
+        });
+      })
+    }
+  },
   computed: {
     ...mapGetters({
       user: 'auth/user'

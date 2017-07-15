@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'lifetime' => 1,
+    'lifetime' => 120,
 
     'expire_on_close' => false,
 
@@ -174,6 +174,6 @@ return [
     |
     */
 
-    'http_only' => false,
+    'http_only' => true,
 
 ];

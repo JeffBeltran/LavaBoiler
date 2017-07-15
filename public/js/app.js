@@ -11806,6 +11806,11 @@ Vue.component('passport-clients', __webpack_require__(101));
 Vue.component('passport-authorized-clients', __webpack_require__(106));
 Vue.component('passport-personal-access-tokens', __webpack_require__(111));
 
+// store.dispatch('auth/fetchUser').catch((error)=> {
+// 	store.dispatch('auth/clearAuth');
+// 	//router.replace({name: 'login'});
+// });
+
 var app = new Vue({
   el: '#app',
   store: __WEBPACK_IMPORTED_MODULE_1__vuex__["a" /* default */],
@@ -11821,10 +11826,11 @@ var app = new Vue({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_index__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__beforeEach__ = __webpack_require__(125);
 
 
 
-// import beforeEach from './beforeEach';
+
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
@@ -11832,7 +11838,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   routes: __WEBPACK_IMPORTED_MODULE_2__app_index__["a" /* routes */]
 });
 
-// router.beforeEach(beforeEach);
+router.beforeEach(__WEBPACK_IMPORTED_MODULE_3__beforeEach__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
@@ -14541,6 +14547,8 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_errors_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_localforage__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -14597,7 +14605,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-// import localforage from 'localforage';
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -14620,14 +14628,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           password: this.password
         },
         context: this
-      }).then(function () {
-        // localforage.getItem('intended').then((name) => {
-        //   if (_.isEmpty(name)) {
-        _this.$router.replace({ name: 'home' });
-        //     return
-        //   }
-        //   this.$router.replace({ name: name});
-        // })
+      }).then(function (test) {
+        __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem('intended').then(function (name) {
+          if (_.isEmpty(name)) {
+            _this.$router.replace({ name: 'home' });
+            return;
+          }
+          _this.$router.replace({ name: name });
+        });
       });
     }
   })
@@ -15806,7 +15814,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setUserData", function() { return setUserData; });
 // import localforage from 'localforage';
 //
-// export const setToken = (state, token) => {
+// export const setA = (state, token) => {
 //   if (_.isEmpty(token)) {
 //     localforage.removeItem('authtoken', token)
 //     return
@@ -15832,6 +15840,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutUser", function() { return logoutUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearAuth", function() { return clearAuth; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_js_cookie__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_js_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_js_cookie__);
 // import localforage from 'localforage';
@@ -15845,24 +15855,21 @@ var register = function register(_ref, _ref2) {
 
 	return axios.post('/register', payload).then(function (response) {
 		context.errors.clearAll();
-		dispatch("fetchUser");
+		//dispatch("fetchUser");
 	}).catch(function (error) {
-		console.log('errors');
 		context.errors.record(error.response.data);
 	});
 };
 
 var login = function login(_ref3, _ref4) {
-	var dispatch = _ref3.dispatch;
+	var dispatch = _ref3.dispatch,
+	    commit = _ref3.commit;
 	var payload = _ref4.payload,
 	    context = _ref4.context;
 
 	return axios.post('/login', payload).then(function (response) {
-		console.log(response);
 		context.errors.clearAll();
-		dispatch("fetchUser");
 	}).catch(function (error) {
-		console.log('not logged in');
 		context.errors.record(error.response.data);
 	});
 };
@@ -15874,43 +15881,25 @@ var fetchUser = function fetchUser(_ref5) {
 		commit('setAuthenticated', true);
 		commit('setUserData', response.data);
 	}).catch(function (error) {
-		console.log(error);
+		return Promise.reject(error);
 		//context.errors = error.response.data.errors
 	});
 };
 
-// export const logoutUser = ({ dispatch }) => {
-// 	return axios.post('/api/logout').then((response) => {
-// 		dispatch('clearAuth');
-// 	})
-// }
-//
-// export const setToken = ({ commit,	dispatch }, token ) => {
-// 	if(_.isEmpty(token)){
-// 		return dispatch('checkTokenExists').then((token) => {
-// 			setHttpToken(token);
-// 		})
-// 	}
-//
-// 	commit('setToken', token);
-// 	setHttpToken(token);
-// }
-//
-// export const checkTokenExists = ({ commit,	dispatch }, token ) => {
-// 	return localforage.getItem('authtoken').then((token) => {
-// 		if(_.isEmpty(token)){
-// 			return Promise.reject('NO_STORAGE_TOKEN');
-// 		}
-// 		return Promise.resolve(token);
-// 	});
-// }
-//
-// export const clearAuth = ({ commit }, token ) => {
-// 	commit('setAuthenticated', false);
-// 	commit('setUserData', null);
-// 	commit('setToken', null);
-// 	setHttpToken(null);
-// }
+var logoutUser = function logoutUser(_ref6) {
+	var dispatch = _ref6.dispatch;
+
+	return axios.post('/logout').then(function (response) {
+		dispatch('clearAuth');
+	});
+};
+
+var clearAuth = function clearAuth(_ref7) {
+	var commit = _ref7.commit;
+
+	commit('setAuthenticated', false);
+	commit('setUserData', null);
+};
 
 /***/ }),
 /* 59 */
@@ -36732,7 +36721,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -36797,6 +36786,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -36807,18 +36798,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     };
   },
 
-  // methods: {
-  //   ...mapActions({
-  //     logoutUser: 'auth/logoutUser'
-  //   }),
-  //   signout() {
-  //     this.logoutUser().then(() => {
-  //       this.$router.replace({
-  //         name: 'home'
-  //       });
-  //     })
-  //   }
-  // },
+  methods: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */]({
+    logoutUser: 'auth/logoutUser'
+  }), {
+    signout: function signout() {
+      var _this = this;
+
+      this.logoutUser().then(function () {
+        _this.$router.replace({
+          name: 'home'
+        });
+      });
+    }
+  }),
   computed: _extends({}, __WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */]({
     user: 'auth/user'
   }))
@@ -36860,12 +36852,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.showNav = !_vm.showNav
       }
     }
-  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])], 1), _vm._v(" "), _c('div', {
+  }, [_c('span'), _vm._v(" "), _c('span'), _vm._v(" "), _c('span')])], 1), _vm._v(" "), (!_vm.user.authenticated) ? _c('div', {
     staticClass: "navbar-menu is-box",
     class: {
       'is-active': _vm.showNav
     }
-  }, [(!_vm.user.authenticated) ? _c('div', {
+  }, [_c('div', {
     staticClass: "navbar-end"
   }, [_c('div', {
     staticClass: "navbar-item"
@@ -36893,7 +36885,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon"
   }, [_c('i', {
     staticClass: "fa fa-sign-in"
-  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])])]) : _vm._e(), _vm._v(" "), (_vm.user.authenticated) ? _c('div', {
+  })]), _vm._v(" "), _c('span', [_vm._v("Login")])])], 1)])])])]) : _vm._e(), _vm._v(" "), (_vm.user.authenticated) ? _c('div', {
+    staticClass: "navbar-menu is-box",
+    class: {
+      'is-active': _vm.showNav
+    }
+  }, [_c('div', {
     staticClass: "navbar-end"
   }, [_c('router-link', {
     staticClass: "navbar-item",
@@ -36906,17 +36903,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "navbar-item has-dropdown is-hoverable"
   }, [_c('a', {
     staticClass: "navbar-link"
-  }, [_vm._v("\n            " + _vm._s(_vm.user.data.name) + "\n          ")]), _vm._v(" "), _vm._m(0)])], 1) : _vm._e()])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._v("\n            " + _vm._s(_vm.user.data.name) + "\n          ")]), _vm._v(" "), _c('div', {
     staticClass: "navbar-dropdown "
   }, [_c('a', {
     staticClass: "navbar-item ",
     attrs: {
       "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.signout($event)
+      }
     }
-  }, [_vm._v("\n              Logout\n            ")])])
-}]}
+  }, [_vm._v("\n              Logout\n            ")])])])], 1)]) : _vm._e()])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -38840,6 +38841,52 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuex__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
+
+
+
+var beforeEach = function beforeEach(to, from, next) {
+
+  if (!to.meta.needsAuth && !to.meta.guest) {
+    next();
+  }
+
+  __WEBPACK_IMPORTED_MODULE_0__vuex__["a" /* default */].dispatch("auth/fetchUser").then(function () {
+    if (to.meta.guest) {
+      next({ name: from.name });
+      return;
+    }
+
+    next();
+  }).catch(function (error) {
+
+    if (to.meta.needsAuth) {
+      __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.setItem('intended', to.name);
+      next({ name: 'login' });
+      return;
+    }
+
+    next();
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (beforeEach);
 
 /***/ })
 /******/ ]);

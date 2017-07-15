@@ -52,7 +52,7 @@
 <script>
 import { mapActions } from 'vuex';
 import { FormErrors } from '../../../helpers/errors.js';
-// import localforage from 'localforage';
+import localforage from 'localforage';
 
 export default {
   data() {
@@ -73,14 +73,14 @@ export default {
           password: this.password,
         },
         context: this
-      }).then(() => {
-        // localforage.getItem('intended').then((name) => {
-        //   if (_.isEmpty(name)) {
+      }).then((test) => {
+        localforage.getItem('intended').then((name) => {
+          if (_.isEmpty(name)) {
             this.$router.replace({ name: 'home'});
-        //     return
-        //   }
-        //   this.$router.replace({ name: name});
-        // })
+            return
+          }
+          this.$router.replace({ name: name});
+        })
       })
     }
   }

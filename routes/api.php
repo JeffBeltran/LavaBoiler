@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/user', function (Request $request) {
-        return $request->user();
+      return $request->user();
     });
     Route::get('/users', function () {
       return response()->json([

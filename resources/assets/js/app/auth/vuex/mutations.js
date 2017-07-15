@@ -1,6 +1,6 @@
 // import localforage from 'localforage';
 //
-// export const setToken = (state, token) => {
+// export const setA = (state, token) => {
 //   if (_.isEmpty(token)) {
 //     localforage.removeItem('authtoken', token)
 //     return
