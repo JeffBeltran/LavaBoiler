@@ -13,26 +13,38 @@
       </div>
     </section>
     <section class="section">
-        <div class="box" v-for="user in users">
-          <article class="media">
-            <div class="media-left">
-              <figure class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>{{user.name}}</strong> <small>{{user.email}}</small> <small></small>
-                  <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-    </section>
-  </div>
+      <b-table
+      :data="users"
+      :striped="true"
+      :paginated="true"
+      :per-page="10">
+
+      <template scope="props">
+        <b-table-column field="id" label="ID" width="40" sortable numeric>
+          {{ props.row.id }}
+        </b-table-column>
+
+        <b-table-column field="name" label="Name" sortable>
+          {{ props.row.name }}
+        </b-table-column>
+
+        <b-table-column field="email" label="Email" sortable>
+          {{ props.row.email }}
+        </b-table-column>
+
+        <b-table-column field="created_at" label="Signed Up" sortable>
+          <span class="tag is-success">
+            {{ new Date(props.row.created_at).toLocaleDateString() }}
+          </span>
+        </b-table-column>
+    </template>
+
+    <div slot="empty" class="has-text-centered">
+      This table is empty!
+    </div>
+  </b-table>
+</section>
+</div>
 </template>
 
 <script>

@@ -18330,7 +18330,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -18341,6 +18341,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18407,17 +18419,51 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c('section', {
     staticClass: "section"
-  }, _vm._l((_vm.users), function(user) {
-    return _c('div', {
-      staticClass: "box"
-    }, [_c('article', {
-      staticClass: "media"
-    }, [_vm._m(1, true), _vm._v(" "), _c('div', {
-      staticClass: "media-content"
-    }, [_c('div', {
-      staticClass: "content"
-    }, [_c('p', [_c('strong', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('small', [_vm._v(_vm._s(user.email))]), _vm._v(" "), _c('small'), _vm._v(" "), _c('br'), _vm._v("\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.\n              ")])])])])])
-  }))])
+  }, [_c('b-table', {
+    attrs: {
+      "data": _vm.users,
+      "striped": true,
+      "paginated": true,
+      "per-page": 10
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(props) {
+        return [_c('b-table-column', {
+          attrs: {
+            "field": "id",
+            "label": "ID",
+            "width": "40",
+            "sortable": "",
+            "numeric": ""
+          }
+        }, [_vm._v("\n          " + _vm._s(props.row.id) + "\n        ")]), _vm._v(" "), _c('b-table-column', {
+          attrs: {
+            "field": "name",
+            "label": "Name",
+            "sortable": ""
+          }
+        }, [_vm._v("\n          " + _vm._s(props.row.name) + "\n        ")]), _vm._v(" "), _c('b-table-column', {
+          attrs: {
+            "field": "email",
+            "label": "Email",
+            "sortable": ""
+          }
+        }, [_vm._v("\n          " + _vm._s(props.row.email) + "\n        ")]), _vm._v(" "), _c('b-table-column', {
+          attrs: {
+            "field": "created_at",
+            "label": "Signed Up",
+            "sortable": ""
+          }
+        }, [_c('span', {
+          staticClass: "tag is-success"
+        }, [_vm._v("\n            " + _vm._s(new Date(props.row.created_at).toLocaleDateString()) + "\n          ")])])]
+      }
+    }])
+  }, [_c('div', {
+    staticClass: "has-text-centered",
+    slot: "empty"
+  }, [_vm._v("\n      This table is empty!\n    ")])])], 1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', {
     staticClass: "hero is-primary"
@@ -18427,20 +18473,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('h1', {
     staticClass: "title"
-  }, [_vm._v("\n          Site Users\n        ")]), _vm._v(" "), _c('h2', {
+  }, [_vm._v("\n            Site Users\n          ")]), _vm._v(" "), _c('h2', {
     staticClass: "subtitle"
-  }, [_vm._v("\n          Listing all users for the site\n        ")])])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "media-left"
-  }, [_c('figure', {
-    staticClass: "image is-64x64"
-  }, [_c('img', {
-    attrs: {
-      "src": "http://bulma.io/images/placeholders/128x128.png",
-      "alt": "Image"
-    }
-  })])])
+  }, [_vm._v("\n            Listing all users for the site\n          ")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
