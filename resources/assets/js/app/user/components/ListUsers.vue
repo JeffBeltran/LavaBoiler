@@ -14,7 +14,7 @@
     </section>
     <section class="section">
       <b-table
-      :data="users"
+      :data=users
       :striped="true"
       :paginated="true"
       :per-page="10">
@@ -51,7 +51,7 @@
 export default {
   data() {
     return {
-      users: null,
+      users: [],
     }
   },
   mounted() {
