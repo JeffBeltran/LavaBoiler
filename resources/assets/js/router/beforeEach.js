@@ -3,12 +3,13 @@ import localforage from 'localforage';
 
 const beforeEach = ((to, from, next) => {
 
-  if(!to.meta.needsAuth && !to.meta.guest){
+  if(to.meta.guestOnly && !to.meta.needsAuth){
     next();
+    return
   }
 
   store.dispatch("auth/fetchUser").then(() => {
-    if (to.meta.guest) {
+    if (to.meta.guestOnly) {
       next({ name: from.name });
       return
     }

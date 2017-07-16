@@ -32,6 +32,8 @@ export const fetchUser = ({ commit }) => {
 export const logoutUser = ({ dispatch }) => {
 	return axios.post('/logout').then((response) => {
 		dispatch('clearAuth');
+		// need to refresh to update CSRF token
+		location.reload()
 	})
 }
 

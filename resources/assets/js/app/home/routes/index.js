@@ -9,7 +9,7 @@ export default [
 		component: Home,
 		name: 'home',
 		meta: {
-			guest: false,
+			guestOnly: false,
 			needsAuth: false
 		}
   }

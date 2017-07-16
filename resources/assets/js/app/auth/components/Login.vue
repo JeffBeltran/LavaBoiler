@@ -74,13 +74,15 @@ export default {
         },
         context: this
       }).then((test) => {
-        localforage.getItem('intended').then((name) => {
-          if (_.isEmpty(name)) {
-            this.$router.replace({ name: 'home'});
-            return
-          }
-          this.$router.replace({ name: name});
-        })
+        if(!this.errors.any()){
+          localforage.getItem('intended').then((name) => {
+            if (_.isEmpty(name)) {
+              this.$router.replace({ name: 'home'});
+              return
+            }
+            this.$router.replace({ name: name});
+          })
+        }
       })
     }
   }

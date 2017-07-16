@@ -10,7 +10,7 @@ export default [
 		component: Login,
 		name: 'login',
 		meta: {
-			guest: true,
+			guestOnly: true,
 			needsAuth: false
 		}
   },
@@ -19,7 +19,7 @@ export default [
 		component: Register,
 		name: 'register',
 		meta: {
-			guest: true,
+			guestOnly: true,
 			needsAuth: false
 		}
   }
