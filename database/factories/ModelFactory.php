@@ -18,7 +18,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => $password ?: $password = bcrypt('password'),
         'remember_token' => str_random(10),
+        'created_at' => $faker->dateTimeBetween('- 3 weeks', 'now'),
+        'updated_at' => $faker->dateTimeBetween('- 3 weeks', 'now')
     ];
 });
