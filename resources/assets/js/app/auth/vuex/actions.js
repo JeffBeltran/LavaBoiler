@@ -19,6 +19,14 @@ export const login = ({ dispatch, commit }, { payload, context }) => {
     })
 }
 
+export const passwordReset = ({ dispatch, commit }, { payload, context }) => {
+    return axios.post('/password/email', payload).then((response) => {
+			context.errors.clearAll();
+    }).catch((error) => {
+			context.errors.record(error.response.data);
+    })
+}
+
 export const fetchUser = ({ commit }) => {
 	return axios.get('/api/user').then((response) => {
 		commit('setAuthenticated', true);

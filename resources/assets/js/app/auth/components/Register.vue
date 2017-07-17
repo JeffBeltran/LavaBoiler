@@ -24,7 +24,7 @@
                   <b-field label="Name"
                   :type="(errors.has('name') ? 'is-danger' : '')"
                   :message="errors.get('name')">
-                  <b-input v-model="name"></b-input>
+                  <b-input v-model="name" ref="start"></b-input>
                 </b-field>
                 <b-field label="Email"
                 :type="(errors.has('email') ? 'is-danger' : '')"
@@ -46,7 +46,7 @@
               <button class="button is-primary">Submit</button>
             </p>
             <p class="control">
-              <button class="button is-link">Cancel</button>
+                <router-link :to="{ name: 'home'}" class="button is-link">Cancel</router-link>
             </p>
           </div>
         </form>
@@ -92,7 +92,10 @@ export default {
         }
       })
     }
-  }
+  },
+  mounted(){
+     this.$refs.start.focus();
+ }
 }
 </script>
 

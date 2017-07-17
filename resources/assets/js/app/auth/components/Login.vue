@@ -20,33 +20,44 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <form @submit.prevent="submit">
+                <form class="control" @submit.prevent="submit">
                   <b-field label="Email"
                   :type="(errors.has('email') ? 'is-danger' : '')"
                   :message="errors.get('email')">
-                    <b-input type="email"  v-model="email"></b-input>
-                  </b-field>
-                  <b-field label="Password"
-                  :type="(errors.has('password') ? 'is-danger' : '')"
-                  :message="errors.get('password')">
-                    <b-input type="password" v-model="password"></b-input>
-                  </b-field>
+                  <b-input type="email" ref="start" v-model="email" autofocus></b-input>
+                </b-field>
+                <b-field label="Password"
+                :type="(errors.has('password') ? 'is-danger' : '')"
+                :message="errors.get('password')">
+                <b-input type="password" v-model="password" password-reveal></b-input>
+              </b-field>
+              <div class="columns is-mobile">
+                <div class="column is-4">
                   <div class="field is-grouped">
                     <p class="control">
                       <button class="button is-primary">Submit</button>
                     </p>
                     <p class="control">
-                      <button class="button is-link">Cancel</button>
+                      <router-link :to="{ name: 'home'}" class="button is-link">Cancel</router-link>
                     </p>
                   </div>
-                </form>
+                </div>
+                <div class="column">
+                  <div class="field is-pulled-right">
+                    <p class="control is-expanded">
+                      <router-link :to="{ name: 'passwordReset'}" class="button is-link">Forgot your Password?</router-link>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </template>
 
 <script>
@@ -85,7 +96,10 @@ export default {
         }
       })
     }
-  }
+  },
+  mounted(){
+     this.$refs.start.focus();
+ }
 }
 </script>
 

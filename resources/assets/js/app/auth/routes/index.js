@@ -1,6 +1,7 @@
 import {
 	Login,
-	Register
+	Register,
+	Email
 }
 from '../components';
 
@@ -18,6 +19,15 @@ export default [
 		path: '/register',
 		component: Register,
 		name: 'register',
+		meta: {
+			guestOnly: true,
+			needsAuth: false
+		}
+  },
+	{
+		path: '/password/reset',
+		component: Email,
+		name: 'passwordReset',
 		meta: {
 			guestOnly: true,
 			needsAuth: false
