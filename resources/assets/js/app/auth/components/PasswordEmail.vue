@@ -52,10 +52,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      passwordReset: 'auth/passwordReset'
+      passwordEmail: 'auth/passwordEmail'
     }),
     submit() {
-      this.passwordReset({
+      this.passwordEmail({
         payload: {
           email: this.email
         },
@@ -66,7 +66,7 @@ export default {
               this.$toast.open({
                 duration: 5000,
                 message: `Password reset email was sent, please check your email`,
-                position: 'is-bottom',
+                position: 'is-top',
                 type: 'is-success'
             })
               return

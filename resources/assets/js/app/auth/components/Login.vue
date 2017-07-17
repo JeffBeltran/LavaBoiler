@@ -45,7 +45,7 @@
                 <div class="column">
                   <div class="field is-pulled-right">
                     <p class="control is-expanded">
-                      <router-link :to="{ name: 'passwordReset'}" class="button is-link">Forgot your Password?</router-link>
+                      <router-link :to="{ name: 'passwordemail'}" class="button is-link">Forgot your Password?</router-link>
                     </p>
                   </div>
                 </div>

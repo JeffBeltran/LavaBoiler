@@ -1,7 +1,3 @@
-// import localforage from 'localforage';
-
-import Cookie from 'js-cookie';
-
 export const register = ({ dispatch }, { payload,	context }) => {
 	return axios.post('/register', payload).then((response) => {
 		context.errors.clearAll();
@@ -19,8 +15,18 @@ export const login = ({ dispatch, commit }, { payload, context }) => {
     })
 }
 
-export const passwordReset = ({ dispatch, commit }, { payload, context }) => {
+export const passwordEmail = ({ dispatch, commit }, { payload, context }) => {
     return axios.post('/password/email', payload).then((response) => {
+			context.errors.clearAll();
+			// need to refresh to update CSRF token
+			location.reload()
+    }).catch((error) => {
+			context.errors.record(error.response.data);
+    })
+}
+
+export const passwordReset = ({ dispatch, commit }, { payload, context }) => {
+    return axios.post('/password/reset/', payload).then((response) => {
 			context.errors.clearAll();
     }).catch((error) => {
 			context.errors.record(error.response.data);

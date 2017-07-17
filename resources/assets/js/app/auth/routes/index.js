@@ -1,7 +1,8 @@
 import {
 	Login,
 	Register,
-	Email
+	PasswordEmail,
+	PasswordReset
 }
 from '../components';
 
@@ -26,8 +27,17 @@ export default [
   },
 	{
 		path: '/password/reset',
-		component: Email,
-		name: 'passwordReset',
+		component: PasswordEmail,
+		name: 'passwordemail',
+		meta: {
+			guestOnly: true,
+			needsAuth: false
+		}
+  },
+	{
+		path: '/password/reset/:token',
+		component: PasswordReset,
+		name: 'passwordreset',
 		meta: {
 			guestOnly: true,
 			needsAuth: false
