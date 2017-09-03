@@ -8,7 +8,7 @@ In short, this is a direct replacement of the `php artisan make:auth` command wi
 ### Resources
 ##### Back-End:
 - [Laravel](https://laravel.com): Acts as the back-end API
-- [Passport](https://laravel.com/docs/5.4/passport): Handles API auth and allows for oAuth support. Current version uses the [CreateFreshApiToken](https://laravel.com/docs/5.4/passport#consuming-your-api-with-javascript) middleware to set a JWT in the encrypted cookie that gets sent with the responses. (This SPA is not decoupled as it is launched via a blade)
+- [Passport](https://laravel.com/docs/5.5/passport): Handles API auth and allows for oAuth support. Current version uses the [CreateFreshApiToken](https://laravel.com/docs/5.5/passport#consuming-your-api-with-javascript) middleware to set a JWT in the encrypted cookie that gets sent with the responses. (This SPA is not decoupled as it is launched via a blade)
 
 ##### Front-End:
 
@@ -35,5 +35,4 @@ Just in-case you are new to the world of Laravel...
 1. run `php artisan key:generate`
 1. run `php artisan migrate`
 1. run `php artisan passport:install`
-1. run `npm install`
 1. visit site
