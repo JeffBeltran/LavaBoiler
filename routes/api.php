@@ -14,17 +14,8 @@ use Illuminate\Http\Request;
 |
 */
 
-
-
-// Auth::routes();
-
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/user', function (Request $request) {
       return $request->user();
-    });
-    Route::get('/users', function () {
-      return response()->json([
-        'data' => User::all()
-      ], 200);
     });
 });

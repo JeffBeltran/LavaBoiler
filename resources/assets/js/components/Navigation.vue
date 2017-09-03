@@ -34,7 +34,7 @@
       </div>
       <div class="navbar-menu is-box" :class="{ 'is-active': showNav }" v-if="user.authenticated">
         <div class="navbar-end">
-          <router-link :to="{ name: 'users'}" class="navbar-item">Users</router-link>
+          <!-- <router-link :to="{ name: 'somenewmodel'}" class="navbar-item">SomeNewModel</router-link> -->
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               {{ user.data.name }}
