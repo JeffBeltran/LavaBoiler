@@ -14591,8 +14591,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.config({
-  driver: __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.LOCALSTORAGE,
-  storeName: 'lavaboiler'
+    driver: __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.LOCALSTORAGE,
+    storeName: 'lavaboiler'
 });
 
 /**
@@ -14609,7 +14609,7 @@ window.Vue = __webpack_require__(4);
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_3_buefy___default.a, {
-  defaultIconPack: 'fa'
+    defaultIconPack: 'fa'
 });
 
 /**
@@ -14626,9 +14626,9 @@ Vue.component('passport-authorized-clients', __webpack_require__(113));
 Vue.component('passport-personal-access-tokens', __webpack_require__(118));
 
 var app = new Vue({
-  el: '#app',
-  store: __WEBPACK_IMPORTED_MODULE_1__vuex__["a" /* default */],
-  router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */]
+    el: '#app',
+    store: __WEBPACK_IMPORTED_MODULE_1__vuex__["a" /* default */],
+    router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */]
 });
 
 /***/ }),
@@ -19179,6 +19179,7 @@ var user = function user(state) {
 /***/ }),
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
+
 
 window._ = __webpack_require__(66);
 

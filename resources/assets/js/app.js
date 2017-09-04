@@ -3,8 +3,8 @@ import store from './vuex';
 import localforage from 'localforage';
 
 localforage.config({
-	driver: localforage.LOCALSTORAGE,
-	storeName: 'lavaboiler'
+    driver: localforage.LOCALSTORAGE,
+    storeName: 'lavaboiler'
 })
 
 /**
@@ -21,7 +21,7 @@ import Buefy from 'buefy';
 import 'buefy/lib/buefy.css';
 
 Vue.use(Buefy, {
-	defaultIconPack: 'fa',
+    defaultIconPack: 'fa',
 })
 
 /**
@@ -38,7 +38,7 @@ Vue.component('passport-authorized-clients', require('./components/passport/Auth
 Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
 const app = new Vue({
-	el: '#app',
-	store: store,
-	router: router,
+    el: '#app',
+    store: store,
+    router: router,
 });
