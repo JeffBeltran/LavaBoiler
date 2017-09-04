@@ -38268,7 +38268,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -38279,8 +38279,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""])
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -38314,22 +38312,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "content has-text-centered"
-  }, [_c('p', [_c('strong', [_vm._v("Bulma")]), _vm._v(" by "), _c('a', {
+  }, [_c('p', [_c('strong', [_vm._v("LavaBoiler")]), _vm._v(" by "), _c('a', {
     attrs: {
-      "href": "http://jgthms.com"
+      "href": "https://github.com/JeffBeltran"
     }
-  }, [_vm._v("Jeremy Thomas")]), _vm._v(". The source code is licensed\n        "), _c('a', {
-    attrs: {
-      "href": "http://opensource.org/licenses/mit-license.php"
-    }
-  }, [_vm._v("MIT")]), _vm._v(". The website content\n        is licensed "), _c('a', {
-    attrs: {
-      "href": "http://creativecommons.org/licenses/by-nc-sa/4.0/"
-    }
-  }, [_vm._v("CC ANS 4.0")]), _vm._v(".\n      ")]), _vm._v(" "), _c('p', [_c('a', {
+  }, [_vm._v("Jeff Beltran")]), _vm._v(".\n      ")]), _vm._v(" "), _c('p', [_c('a', {
     staticClass: "icon",
     attrs: {
-      "href": "https://github.com/jgthms/bulma"
+      "href": "https://github.com/JeffBeltran"
     }
   }, [_c('i', {
     staticClass: "fa fa-github"
